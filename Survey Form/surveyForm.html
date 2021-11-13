@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://google.co.in">
+         <!-- If we remove this, every thing will move to the left of the page--> -->
+    <div align="center">
+        <h1>Student Survey Form</h1>
+<!-- first name -->
+        <label>Enter Your First Name:</label>
+        <input type="text" name="FirstName" placeholder="First Name"size=25 maxlength=35 value=""> 
+        </br> </br>
+<!-- secomd name -->
+        <label>Enter Your Second Name:</label>
+        <input type="text" name="SecondName"placeholder="Second Name"size=25 maxlength=35 value="">
+        </br> </br>
+<!-- phone number -->
+        <label>Enter Your phone Number:</label>
+        <select>
+            <option disabled selected>Country Code
+            <option value="1">+91
+            <option value="2">+1
+            <option value="3">+44
+        </select>
+        
+        <input type="tel" name="phone Number" placeholder="Phone Number"size=25 maxlength=10 value=""></br> </br>
+ <!-- email -->
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email"placeholder="Enter Email"></br> </br>
+<!-- college name -->
+        <label>Enter Your College Name:</label>
+        <input type="text" name="College Name" placeholder="College Name"size=25 maxlength=35 value=""> </br> </br>
+<!-- details about graduation -->
+        <label>Have You Completed Your Graduation:</label>
+        <input type="radio" name="exe" value=1>yes
+        <input type="radio" name="exe" value=1>no
+        </br> </br>
+        <label>If No Enter Your Year Of Graduation:</label>
+        <select >
+            <option disabled selected> Please Select
+                <option value="1" >2022
+                <option value="2" >2023
+                <option value="3" >2024
+                <option value="4" >2025
+            </option>
+        </select>
+        </br> </br>
+ <!--submit and reset button  -->
+        <input type="submit" value="Submit form">
+        <input type="reset" value="Reset form">
+    </div>
+    </form>
+</body>
+</html>
