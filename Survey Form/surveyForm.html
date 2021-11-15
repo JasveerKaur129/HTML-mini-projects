@@ -4,44 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="survey.css">
     <title>Document</title>
+    <script>
+        function validateForm() {
+            var firstNameField = document.getElementById("firstName").value;
+            var secondNameField = document.getElementById("secondName").value;
+            var phoneField = document.getElementById("phone").value;
+            var collegeField = document.getElementById("college").value;
+    
+            if ((firstNameField == "" || firstNameField == null)&&(secondNameField == "" || secondNameField == null)){
+            alert("please fill the firstName and secondName correctly");
+            return false;
+            }
+            if (firstNameField == "" || firstNameField == null) {
+            alert("please fill the firstName correctly");
+            return false;
+            }
+            if (secondNameField == "" || secondNameField == null) {
+            alert("please fill the secondName correctly");
+            return false;
+            }
+            var phoneno = /^\d{10}$/;
+            if(!phoneField.match(phoneno)){
+                alert("Please enter a valid number");
+                return false;
+            }
+            if (collegeField == "" || collegeField == null){
+            alert("please fill college correctly");
+            return false;
+            }
+        }
+    </script>
+
 </head>
 <body>
-    <form action="http://google.co.in">
-         <!-- If we remove this, every thing will move to the left of the page--> -->
-    <div align="center">
-        <h1>Student Survey Form</h1>
+    <h1>Student Survey Form</h1>
+    <form action="http://google.co.in" onsubmit="return validateForm()" method="post" required>
+         <!-- If we remove this, every thing will move to the left of the page-->
+    <div >
+        
 <!-- first name -->
         <label>Enter Your First Name:</label>
-        <input type="text" name="FirstName" placeholder="First Name"size=25 maxlength=35 value=""> 
+        <input type="text" class="input" id="firstName"name="FirstName" placeholder="First Name"size=25 maxlength=35 value=""> 
         </br> </br>
 <!-- secomd name -->
         <label>Enter Your Second Name:</label>
-        <input type="text" name="SecondName"placeholder="Second Name"size=25 maxlength=35 value="">
+        <input type="text"class="input" id="secondName" name="SecondName"placeholder="Second Name"size=25 maxlength=35 value="">
         </br> </br>
 <!-- phone number -->
         <label>Enter Your phone Number:</label>
-        <select>
-            <option disabled selected>Country Code
+        <select class="option1">
+            <option disabled selected>Country
             <option value="1">+91
             <option value="2">+1
             <option value="3">+44
         </select>
         
-        <input type="tel" name="phone Number" placeholder="Phone Number"size=25 maxlength=10 value=""></br> </br>
+        <input type="tel" class="phone" id="phone" name="phone Number" placeholder="Phone Number" maxlength=10 value="">
+        </br> </br>
  <!-- email -->
         <label for="email">Enter your email:</label>
-        <input type="email" id="email" name="email"placeholder="Enter Email"></br> </br>
+        <input type="email" class="input" id="email" name="email"placeholder="Enter Email"></br> </br>
 <!-- college name -->
         <label>Enter Your College Name:</label>
-        <input type="text" name="College Name" placeholder="College Name"size=25 maxlength=35 value=""> </br> </br>
+        <input type="text" class="input" id="college"name="College Name" placeholder="College Name"size=25 maxlength=35 value=""> </br> </br>
 <!-- details about graduation -->
         <label>Have You Completed Your Graduation:</label>
-        <input type="radio" name="exe" value=1>yes
-        <input type="radio" name="exe" value=1>no
+        <input type="radio" name="exe"id="option1" value=1 style="display: inline">yes
+        <input type="radio" name="exe"id="option1"value=1>no
         </br> </br>
-        <label>If No Enter Your Year Of Graduation:</label>
-        <select >
+        
+        <label>If No, Please Select Your Year Of Graduation:</label>
+        <select class="option" id="option" >
             <option disabled selected> Please Select
                 <option value="1" >2022
                 <option value="2" >2023
